@@ -203,9 +203,6 @@
         <button type="button" class="newsletter-popup-close" id="newsletter-popup-close">OK</button>
       </div>
     </div>
-        <span id="newsletter-message" class="newsletter-message" aria-live="polite"></span>
-      </div>
-    </section>
     <footer>
       <div class="footer-logo">
         <img src="assets/SWE. 2026.png" alt="Flag Shop logo" />
@@ -423,18 +420,6 @@
               return;
             }
             showPopup("Thanks for subscribing!", false);
-        var msg = document.getElementById("newsletter-message");
-        if (btn && input && msg) {
-          btn.addEventListener("click", function () {
-            var email = (input.value || "").trim();
-            if (!email) {
-              msg.textContent = "Please enter your email.";
-              msg.className = "newsletter-message newsletter-message--error";
-              console.log("Newsletter: Subscribe clicked but no email entered.");
-              return;
-            }
-            msg.textContent = "Thanks for subscribing!";
-            msg.className = "newsletter-message newsletter-message--success";
             input.value = "";
             console.log("Newsletter: Subscribed with email: " + email);
           });
